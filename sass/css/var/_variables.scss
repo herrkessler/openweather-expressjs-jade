@@ -1,0 +1,6 @@
+$default-margin:		     20px;
+$default-padding:	       20px;
+
+$screen: new-breakpoint(max-width 1024px);
+$tablet: new-breakpoint(max-width 768px);
+$mobile: new-breakpoint(max-width 480px);

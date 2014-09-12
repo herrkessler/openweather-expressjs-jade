@@ -1,0 +1,14 @@
+{
+    "name": "",
+    "description": "SASS JADE EXPRESS JS",
+    "version": "0.0.2",
+    "dependencies": {
+        "express": "4.x",
+        "jade":"*",
+        "node-sass": "*",
+        "buildify": "*",
+        "node-neat": "*",
+        "request": "*",
+        "connect-livereload": "*"
+    }
+}

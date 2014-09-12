@@ -1,0 +1,49 @@
+extends layout/_layout
+
+block title
+  title Wetter Plogoff
+
+block content
+
+  #object
+    #object-name.row
+      = weather.city.name
+
+    ul#object-days.row
+      each day in weather.list
+        li.object-day
+          .weather-data
+            dl.date
+              dt Datum:
+              dd
+                = new Date( day.dt *1000).getDate()
+                |.
+                = new Date( day.dt *1000).getMonth()
+                |.
+                = new Date( day.dt *1000).getFullYear()
+            dl.temp.max
+              dt Temp Max:
+              dd
+                = Math.round((day.temp.max)* 10) / 10
+                | &#176;
+            dl.temp.max
+              dt Temp Min:
+              dd
+                = Math.round((day.temp.min)* 10) / 10
+                | &#176;
+            dl.wind
+              dt Wind
+              dd
+                = day.speed
+                | mps
+            dl.pressure
+              dt Pressure
+              dd
+                = day.pressure
+                | hPa
+            dl.weather
+              dt Wetter
+              dd= day.weather[0].description
+          .weather-sign(class= 'w-' + day.weather[0].id)
+          .weather-icon
+            img(src="http://openweathermap.org/img/w/#{day.weather[0].icon}.png")
